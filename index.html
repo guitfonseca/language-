@@ -24,6 +24,7 @@
   --rus: #b05ae8;
   --zho: #e87a5a;
   --tup: #5ae8c4;
+  --ara: #e8d45a;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,9 +65,9 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
 
 /* COLOR HELPERS */
 .c-esp{background:var(--esp)} .c-eng{background:var(--eng)} .c-fra{background:var(--fra)} .c-deu{background:var(--deu)}
-.c-ita{background:var(--ita)} .c-rus{background:var(--rus)} .c-zho{background:var(--zho)} .c-tup{background:var(--tup)}
+.c-ita{background:var(--ita)} .c-rus{background:var(--rus)} .c-zho{background:var(--zho)} .c-tup{background:var(--tup)} .c-ara{background:var(--ara)}
 .t-esp{color:var(--esp)} .t-eng{color:var(--eng)} .t-fra{color:var(--fra)} .t-deu{color:var(--deu)}
-.t-ita{color:var(--ita)} .t-rus{color:var(--rus)} .t-zho{color:var(--zho)} .t-tup{color:var(--tup)}
+.t-ita{color:var(--ita)} .t-rus{color:var(--rus)} .t-zho{color:var(--zho)} .t-tup{color:var(--tup)} .t-ara{color:var(--ara)}
 .b-esp{background:rgba(232,115,90,.12);border-color:rgba(232,115,90,.25)}
 .b-eng{background:rgba(90,158,232,.12);border-color:rgba(90,158,232,.25)}
 .b-fra{background:rgba(232,196,90,.12);border-color:rgba(232,196,90,.25)}
@@ -75,6 +76,7 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
 .b-rus{background:rgba(176,90,232,.12);border-color:rgba(176,90,232,.25)}
 .b-zho{background:rgba(232,122,90,.12);border-color:rgba(232,122,90,.25)}
 .b-tup{background:rgba(90,232,196,.12);border-color:rgba(90,232,196,.25)}
+.b-ara{background:rgba(232,212,90,.12);border-color:rgba(232,212,90,.25)}
 
 /* MAIN */
 .main { flex: 1; padding: 36px 40px; max-width: calc(100vw - 210px); overflow-x: hidden; }
@@ -261,6 +263,7 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
   <div class="nav-label">Tier 3 · Longo Prazo</div>
   <div class="nav-item" onclick="openModal('rus')"><span class="nav-dot c-rus"></span>Russo</div>
   <div class="nav-item" onclick="openModal('zho')"><span class="nav-dot c-zho"></span>Mandarim</div>
+  <div class="nav-item" onclick="openModal('ara')"><span class="nav-dot c-ara"></span>Árabe</div>
   <div class="nav-label">Tier 4 · Cultural</div>
   <div class="nav-item" onclick="openModal('tup')"><span class="nav-dot c-tup"></span>Tupi</div>
 </aside>
@@ -289,6 +292,7 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
       <div class="legend-item" onclick="openModal('ita')"><div class="legend-dot c-ita"></div>Italiano</div>
       <div class="legend-item" onclick="openModal('rus')"><div class="legend-dot c-rus"></div>Russo</div>
       <div class="legend-item" onclick="openModal('zho')"><div class="legend-dot c-zho"></div>Mandarim</div>
+      <div class="legend-item" onclick="openModal('ara')"><div class="legend-dot c-ara"></div>Árabe</div>
       <div class="legend-item" onclick="openModal('tup')"><div class="legend-dot c-tup"></div>Tupi</div>
     </div>
 
@@ -338,6 +342,7 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
             <option value="ita">Italiano</option>
             <option value="rus">Russo</option>
             <option value="zho">Mandarim</option>
+            <option value="ara">Árabe</option>
             <option value="tup">Tupi / Nheengatu</option>
           </select>
         </div>
@@ -422,7 +427,8 @@ const LANGS = {
   ita:{name:'Italiano',tier:'TIER 2 · MÉDIO PRAZO',color:'ita',desc:'O mais próximo do português entre os europeus. Com espanhol e francês rodando, a aquisição vem rápida.',schedule:['2x/semana','35 min','Qui e Sáb','Manhã ou almoço'],resources:[{icon:'▶️',name:'Italiano Automatico',type:'YouTube',url:'https://www.youtube.com/@ItalianoAutomatico'},{icon:'📚',name:'Assimil — Italian with Ease',type:'Livro',url:'https://www.assimil.com/en/language-courses/italian-with-ease'},{icon:'📱',name:'Duolingo — Italiano',type:'App',url:'https://www.duolingo.com/course/it/pt'},{icon:'📺',name:'RAI Play',type:'Streaming',url:'https://www.raiplay.it'},{icon:'🗣️',name:'italki — Italiano',type:'Tutores',url:'https://www.italki.com/en/teachers/italian'}]},
   rus:{name:'Russo',tier:'TIER 3 · LONGO PRAZO',color:'rus',desc:'Cirílico primeiro. 6 casos gramaticais. Língua muito lógica depois que o sistema encaixa. Começo devagar e consistente.',schedule:['1–2x/semana','30–40 min','Qui semana B','Sem pressa'],resources:[{icon:'▶️',name:'Russian With Max',type:'YouTube',url:'https://www.youtube.com/@RussianWithMax'},{icon:'🎧',name:'Pimsleur Russian',type:'Áudio',url:'https://www.pimsleur.com/learn-russian'},{icon:'🃏',name:'Anki — Cirílico + 1000 palavras',type:'Flashcards',url:'https://ankiweb.net/shared/info/1898289528'},{icon:'📱',name:'Duolingo — Russo',type:'App',url:'https://www.duolingo.com/course/ru/pt'},{icon:'🗣️',name:'italki — Russo',type:'Tutores',url:'https://www.italki.com/en/teachers/russian'}]},
   zho:{name:'Mandarim',tier:'TIER 3 · LONGO PRAZO',color:'zho',desc:'4 tons + Pinyin + caracteres. Gramática simples (sem conjugação). Começa com Pinyin e 300 palavras mais frequentes.',schedule:['2x/semana','40 min','Ter e Sex','Manhã 7h'],resources:[{icon:'📱',name:'HelloChinese App',type:'App',url:'https://www.hellochinese.cc'},{icon:'📖',name:'Pleco — Dicionário',type:'App essencial',url:'https://www.pleco.com'},{icon:'▶️',name:'Yoyo Chinese',type:'YouTube',url:'https://www.youtube.com/@yoyochinese'},{icon:'🎙️',name:'ChinesePod',type:'Podcast',url:'https://open.spotify.com/show/6TiD7qrKO19mPnMLdl1XHT'},{icon:'📚',name:'HSK Standard Course 1',type:'Livro',url:'https://www.amazon.com.br/HSK-Standard-Course-1/dp/7561937091'},{icon:'🗣️',name:'italki — Mandarim',type:'Tutores',url:'https://www.italki.com/en/teachers/chinese-mandarin'}]},
-  tup:{name:'Tupi / Nheengatu',tier:'TIER 4 · CULTURAL',color:'tup',desc:'Projeto cultural. Foco em Nheengatu (Língua Geral Amazônica) como ponto de entrada — ainda tem falantes vivos.',schedule:['1x/semana','30 min','Sábado','Sem pressão'],resources:[{icon:'▶️',name:'Nheengatu Now',type:'YouTube',url:'https://www.youtube.com/@nheengatunow'},{icon:'🌐',name:'Museu do Índio — Acervo',type:'Site',url:'https://www.museudoindio.gov.br/acervo'},{icon:'🏛️',name:'USP Letras — Línguas Indígenas',type:'Acadêmico',url:'https://letrashome.fflch.usp.br/node/64'},{icon:'🌐',name:'FUNAI — Materiais',type:'Site',url:'https://www.gov.br/funai/pt-br'}]}
+  tup:{name:'Tupi / Nheengatu',tier:'TIER 4 · CULTURAL',color:'tup',desc:'Projeto cultural. Foco em Nheengatu (Língua Geral Amazônica) como ponto de entrada — ainda tem falantes vivos.',schedule:['1x/semana','30 min','Sábado','Sem pressão'],resources:[{icon:'▶️',name:'Nheengatu Now',type:'YouTube',url:'https://www.youtube.com/@nheengatunow'},{icon:'🌐',name:'Museu do Índio — Acervo',type:'Site',url:'https://www.museudoindio.gov.br/acervo'},{icon:'🏛️',name:'USP Letras — Línguas Indígenas',type:'Acadêmico',url:'https://letrashome.fflch.usp.br/node/64'},{icon:'🌐',name:'FUNAI — Materiais',type:'Site',url:'https://www.gov.br/funai/pt-br'}]},
+  ara:{name:'Árabe',tier:'TIER 3 · LONGO PRAZO',color:'ara',desc:'Alfabeto árabe primeiro (4–6 semanas). Árabe Moderno Padrão (MSA) como base — entendido em todo o mundo árabe. Língua de direita para esquerda, sem vogais escritas. Muito lógica depois que o sistema de raízes trilíteras encaixa.',schedule:['1–2x/semana','35 min','Semana B','Sem pressa'],resources:[{icon:'📱',name:'Duolingo — Árabe',type:'App (alfabeto)',url:'https://www.duolingo.com/course/ar/pt'},{icon:'▶️',name:'Arabic with Sam',type:'YouTube',url:'https://www.youtube.com/@ArabicwithSam'},{icon:'▶️',name:'Qasid Arabic Institute',type:'YouTube',url:'https://www.youtube.com/@QasidArabic'},{icon:'🎧',name:'Pimsleur Arabic',type:'Áudio',url:'https://www.pimsleur.com/learn-arabic'},{icon:'🃏',name:'Anki — Arabic Alphabet',type:'Flashcards',url:'https://ankiweb.net/shared/info/1444874256'},{icon:'🗣️',name:'italki — Árabe',type:'Tutores',url:'https://www.italki.com/en/teachers/arabic'},{icon:'🌐',name:'Madinah Arabic',type:'Curso grátis',url:'https://www.madinaharabic.com'}]}
 };
 
 const SKILLS = [
@@ -452,7 +458,7 @@ const WEEKS = {
     1:[{lang:'deu',startHour:6,startMin:30,durationMin:45,slot:'manha',focus:'Easy German + Nicos Weg lição'},{lang:'eng',startHour:12,startMin:15,durationMin:15,slot:'almoco',focus:'Podcast The Economist · passivo'}],
     2:[{lang:'zho',startHour:6,startMin:30,durationMin:40,slot:'manha',focus:'Caracteres + Tons · HelloChinese'},{lang:'esp',startHour:12,startMin:15,durationMin:20,slot:'almoco',focus:'Radio Ambulante · compreensão auditiva'}],
     3:[{lang:'eng',startHour:6,startMin:30,durationMin:45,slot:'manha',focus:'Business writing · e-mail drafts + Grammarly'}],
-    4:[{lang:'rus',startHour:6,startMin:30,durationMin:40,slot:'manha',focus:'Cirílico + Pimsleur · lição do dia'},{lang:'deu',startHour:12,startMin:15,durationMin:20,slot:'almoco',focus:'Easy German · vídeo do dia'}],
+    4:[{lang:'rus',startHour:6,startMin:30,durationMin:40,slot:'manha',focus:'Cirílico + Pimsleur · lição do dia'},{lang:'ara',startHour:12,startMin:15,durationMin:25,slot:'almoco',focus:'Alfabeto árabe · Duolingo + Anki'},{lang:'deu',startHour:12,startMin:15,durationMin:20,slot:'almoco',focus:'Easy German · vídeo do dia'}],
     5:[{lang:'ita',startHour:6,startMin:30,durationMin:30,slot:'manha',focus:'Assimil Italiano + Anki'},{lang:'fra',startHour:12,startMin:15,durationMin:25,slot:'almoco',focus:'Coffee Break French · episódio'}],
     6:[{lang:'zho',startHour:8,startMin:0,durationMin:50,slot:'manha',focus:'Sessão longa: Yoyo Chinese + revisão caracteres'},{lang:'tup',startHour:9,startMin:15,durationMin:30,slot:'manha',focus:'Nheengatu Now · YouTube'}],
     0:[{lang:'rus',startHour:12,startMin:0,durationMin:15,slot:'almoco',focus:'Revisão Anki — todos os idiomas (15 min livre)'}]
